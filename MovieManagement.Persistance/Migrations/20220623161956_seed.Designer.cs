@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieManagement.Persistance;
 
@@ -11,9 +12,10 @@ using MovieManagement.Persistance;
 namespace MovieManagement.Persistance.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220623161956_seed")]
+    partial class seed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +61,7 @@ namespace MovieManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 6, 29, 10, 9, 22, 468, DateTimeKind.Local).AddTicks(3513),
+                            Created = new DateTime(2022, 6, 23, 18, 19, 56, 794, DateTimeKind.Local).AddTicks(859),
                             StatusId = 1
                         });
                 });
@@ -77,10 +79,6 @@ namespace MovieManagement.Persistance.Migrations
 
                     b.Property<DateTime>("DoB")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("PlaceOfBirth")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -123,13 +121,10 @@ namespace MovieManagement.Persistance.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PremierYear")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(2000);
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -165,13 +160,11 @@ namespace MovieManagement.Persistance.Migrations
 
                             b1.Property<string>("FirstName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)")
-                                .HasColumnName("FirstName");
+                                .HasColumnType("nvarchar(max)");
 
                             b1.Property<string>("LastName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)")
-                                .HasColumnName("LastName");
+                                .HasColumnType("nvarchar(max)");
 
                             b1.HasKey("DirectorId");
 

@@ -14,6 +14,7 @@ namespace MovieManagement.Domain.Entities
 
         public int PremierYear { get; set; }
 
+        public int DirectorId { get; set; }
         public Director Director { get; set; }
     }
 }

@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Api", "MovieManagement.Api.csproj", "{20F5625B-C400-44CE-9A05-F6AFB6CDA5B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement.Api", "MovieManagement.Api.csproj", "{20F5625B-C400-44CE-9A05-F6AFB6CDA5B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{70EE5ABC-A16B-4231-B492-7F29F9AA6ED9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{E93B6358-30FB-4049-9122-BC252AED1DD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Infrastructure", "..\Infrastructure\MovieManagement.Infrastructure.csproj", "{780021B7-94AC-4062-B7D4-C52CCE137E90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement.Infrastructure", "..\Infrastructure\MovieManagement.Infrastructure.csproj", "{780021B7-94AC-4062-B7D4-C52CCE137E90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Persistance", "..\MovieManagement.Persistance\MovieManagement.Persistance.csproj", "{77C5377C-1E45-4542-87E5-82E3CC6C7AFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement.Persistance", "..\MovieManagement.Persistance\MovieManagement.Persistance.csproj", "{77C5377C-1E45-4542-87E5-82E3CC6C7AFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Domain", "..\MovieManagement.Domain\MovieManagement.Domain.csproj", "{52DF6C2E-DF40-42B9-BC7B-582DE154EB82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieManagement.Domain", "..\MovieManagement.Domain\MovieManagement.Domain.csproj", "{52DF6C2E-DF40-42B9-BC7B-582DE154EB82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieManagement.Application", "..\MovieManagement.Application\MovieManagement.Application.csproj", "{46C736E8-77EC-4FD2-9A98-478FFF7291E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{52DF6C2E-DF40-42B9-BC7B-582DE154EB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52DF6C2E-DF40-42B9-BC7B-582DE154EB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52DF6C2E-DF40-42B9-BC7B-582DE154EB82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46C736E8-77EC-4FD2-9A98-478FFF7291E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C736E8-77EC-4FD2-9A98-478FFF7291E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C736E8-77EC-4FD2-9A98-478FFF7291E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C736E8-77EC-4FD2-9A98-478FFF7291E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{780021B7-94AC-4062-B7D4-C52CCE137E90} = {E93B6358-30FB-4049-9122-BC252AED1DD0}
 		{77C5377C-1E45-4542-87E5-82E3CC6C7AFA} = {E93B6358-30FB-4049-9122-BC252AED1DD0}
 		{52DF6C2E-DF40-42B9-BC7B-582DE154EB82} = {70EE5ABC-A16B-4231-B492-7F29F9AA6ED9}
+		{46C736E8-77EC-4FD2-9A98-478FFF7291E6} = {70EE5ABC-A16B-4231-B492-7F29F9AA6ED9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CDA37213-0191-431A-8C2E-D713BE1895F0}

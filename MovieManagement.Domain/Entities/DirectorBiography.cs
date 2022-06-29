@@ -13,5 +13,7 @@ namespace MovieManagement.Domain.Entities
         public DateTime DoB { get; set; }
         public int DirectorId { get; set; }
         public Director Director { get; set; }
+
+        public string PlaceOfBirth { get; set; }
     }
 }
