@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieManagement.Persistance;
 
@@ -11,9 +12,10 @@ using MovieManagement.Persistance;
 namespace MovieManagement.Persistance.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220630081752_behav")]
+    partial class behav
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +61,7 @@ namespace MovieManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 6, 30, 16, 17, 3, 159, DateTimeKind.Local).AddTicks(1990),
+                            Created = new DateTime(2022, 6, 30, 10, 17, 52, 373, DateTimeKind.Local).AddTicks(2516),
                             StatusId = 1
                         });
                 });
@@ -72,7 +74,7 @@ namespace MovieManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("DirectorId")
+                    b.Property<int?>("DirectorId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DoB")
@@ -85,7 +87,8 @@ namespace MovieManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DirectorId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[DirectorId] IS NOT NULL");
 
                     b.ToTable("DirectorBiographies");
                 });
@@ -197,9 +200,7 @@ namespace MovieManagement.Persistance.Migrations
                 {
                     b.HasOne("MovieManagement.Domain.Entities.Director", "Director")
                         .WithOne("DirectorBiography")
-                        .HasForeignKey("MovieManagement.Domain.Entities.DirectorBiography", "DirectorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("MovieManagement.Domain.Entities.DirectorBiography", "DirectorId");
 
                     b.Navigation("Director");
                 });

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MovieManagement.Application.Directors.Commands.CreateDirector
 {
-    public class CreateDirectorCommandHandler : IRequestHandler<CreateDirectorCammand, int>
+    public class CreateDirectorCommandHandler : IRequestHandler<CreateDirectorCommand, int>
     {
         private readonly IMovieDbContext _context;
 
@@ -18,7 +18,7 @@ namespace MovieManagement.Application.Directors.Commands.CreateDirector
         {
             _context = movieDbContext;
         }
-        public async Task<int> Handle(CreateDirectorCammand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateDirectorCommand request, CancellationToken cancellationToken)
         {
             Director director = new()
             {

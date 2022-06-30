@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieManagement.Persistance;
 
@@ -11,9 +12,10 @@ using MovieManagement.Persistance;
 namespace MovieManagement.Persistance.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    partial class MovieDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220630102901_behav2")]
+    partial class behav2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +61,7 @@ namespace MovieManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 6, 30, 16, 17, 3, 159, DateTimeKind.Local).AddTicks(1990),
+                            Created = new DateTime(2022, 6, 30, 12, 29, 1, 40, DateTimeKind.Local).AddTicks(9109),
                             StatusId = 1
                         });
                 });
@@ -221,7 +223,8 @@ namespace MovieManagement.Persistance.Migrations
 
             modelBuilder.Entity("MovieManagement.Domain.Entities.Director", b =>
                 {
-                    b.Navigation("DirectorBiography");
+                    b.Navigation("DirectorBiography")
+                        .IsRequired();
 
                     b.Navigation("Movies");
                 });

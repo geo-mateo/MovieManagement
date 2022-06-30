@@ -18,8 +18,13 @@ namespace MovieManagement.Api.Controllers
             var vm = await Mediator.Send(new GetDirectorDetailQuery() { DirectorId = id });
             return vm;
         }
-
-
+        
+        [HttpPost]
+        public async Task<IActionResult> CreateDirector(CreateDirectorCommand command)
+        {
+            var result = await Mediator.Send(command);
+            return Ok(result);
+        }
 
     }
 }

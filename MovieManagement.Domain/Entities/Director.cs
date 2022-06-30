@@ -11,7 +11,6 @@ namespace MovieManagement.Domain.Entities
     public class Director : AuditableEntity
     {
         public int Id { get; set; }
-
         public PersonName DirectorName { get; set; }
 
         public ICollection<Movie> Movies { get; set; }
