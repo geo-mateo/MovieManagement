@@ -27,6 +27,7 @@ namespace MovieManagement.Application.Directors.Commands.CreateDirector
 
             _context.Directors.Add(director);
 
+            await _context.SaveChangesAsync(cancellationToken);
             DirectorBiography directorBiography = new()
             {
                 DoB = request.DoB,
